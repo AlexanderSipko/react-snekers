@@ -6,8 +6,8 @@ function App() {
 
   return (
     <div className="wrapper">
-      <heder>
-        <div className="headerLeft">
+      <header className="d-flex justify-between">
+        <div className="d-flex align-center">
           <img width={40} height={40} src="/img/logo.svg" alt='logo' />
           <div className="headerInfo">
             <h3>React snekers</h3>
@@ -23,7 +23,7 @@ function App() {
           <img width={18} height={18} src="/img/user.svg" alt='user' />
           </li>
         </ul>
-      </heder>
+      </header>
       <div className="content">
         <h1>Все кроссовки</h1>
         ...
