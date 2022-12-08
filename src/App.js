@@ -2,11 +2,13 @@
 
 
 function App() {
+
+
   return (
     <div className="wrapper">
       <heder>
         <div className="headerLeft">
-          <img src="/img/logo.svg" alt='logo' />
+          <img width={40} height={40} src="/img/logo.svg" alt='logo' />
           <div className="headerInfo">
             <h3>React snekers</h3>
             <p>Магазин лучших кросовок</p>
@@ -14,11 +16,11 @@ function App() {
         </div>
         <ul className="headerRight">
           <li>
-            <svg />
+          <img width={18} height={18} src="/img/heart.svg" alt='heart' />
             <span>1205 руб.</span>
           </li>
           <li>
-            <svg />
+          <img width={18} height={18} src="/img/user.svg" alt='user' />
           </li>
         </ul>
       </heder>
