@@ -5,16 +5,16 @@ function App() {
 
 
   return (
-    <div className="wrapper">
+    <div className="wrapper clear">
       <header className="d-flex justify-between">
         <div className="d-flex align-center">
           <img width={40} height={40} src="/img/logo.svg" alt='logo' />
-          <div className="headerInfo">
+          <div>
             <h3>React snekers</h3>
             <p>Магазин лучших кросовок</p>
           </div>
         </div>
-        <ul className="headerRight">
+        <ul className="d-flex">
           <li>
           <img width={18} height={18} src="/img/heart.svg" alt='heart' />
             <span>1205 руб.</span>
