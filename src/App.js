@@ -9,7 +9,10 @@ function App() {
 
       <div className="overLay">
         <div className="drawer">
-          <h2 className="mb-30">Корзина</h2>
+          <h2 className="mb-30 d-flex justify-between align-center">
+            Корзина
+            <img className="remove--btn cu-p" src="/img/Card/btn-remove.jpg" alt='btn--remove' />
+          </h2>
 
           <div className="items">
 
@@ -49,7 +52,8 @@ function App() {
               </li>
             </ul>
 
-            <button>Оформить заказ</button>
+            <button className="greenButton">Оформить заказ <img src="/img/Card/string.svg" alt='string' />
+            </button>
           </div>
         </div>
 

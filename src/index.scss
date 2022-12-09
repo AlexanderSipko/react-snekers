@@ -184,6 +184,8 @@ header {
 .catrTotalBlock {
 
   ul {
+    margin-bottom: 40px !important;
+
     li {
       display: flex;
       align-items: flex-end;
@@ -200,15 +202,42 @@ header {
     margin: 0 7px;
   }
 
-  button {
-    width: 100%;
-    height: 55px;
+  .greenButton {
+    position: relative;
+    
+    &:hover {
+      img {
+        transform: translateX(5px);
+      }
+    }
 
-    background: #9DD558;
-    border-radius: 18px;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500px;
+    img {
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+}
+
+.greenButton {
+  width: 100%;
+  height: 55px;
+
+  background: #9DD558;
+  border-radius: 18px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500px;
+
+  &:hover {
+    background: lighten($color:  #9DD558, $amount: 5%);
+    cursor: pointer;
+  }
+
+  &:active {
+    background: darken($color:  #9DD558, $amount: 5%);
+    cursor: pointer;
   }
 }
