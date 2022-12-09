@@ -6,6 +6,58 @@ function App() {
 
   return (
     <div className="wrapper clear">
+
+      <div className="overLay">
+        <div className="drawer">
+          <h2 className="mb-30">Корзина</h2>
+
+          <div className="items">
+
+            <div className="cartItem d-flex align-center mb-20">
+
+                <div style={{backgroundImage: 'url("/img/Sneakers/image 5-2.svg")'}} className="cartItemImg"></div>
+                <div className="mr-20">
+                  <p className="mb-5">Мужские Кроссовки Nike Kyrie 7</p>
+                  <b>11 299 руб.</b>
+                </div>
+              <img className="remove--btn" src="/img/Card/btn-remove.jpg" alt='btn--remove' />
+            </div>
+
+            <div className="cartItem d-flex align-center mb-20">
+
+                <div style={{backgroundImage: 'url("/img/Sneakers/image 5-1.svg")'}} className="cartItemImg"></div>
+                <div className="mr-20">
+                  <p className="mb-5">Мужские Кроссовки Nike Blazer Mid Suede</p>
+                  <b>12 999 руб.</b>
+                </div>
+              <img className="remove--btn" src="/img/Card/btn-remove.jpg" alt='btn--remove' />
+            </div>
+
+          </div>
+
+          <div className="catrTotalBlock">
+            <ul>
+              <li>
+                <span>Итого:</span>
+                <div></div>
+                <b>21 498 руб.</b>
+              </li>
+              <li>
+                <span>Налог 5%:</span>
+                <div></div>
+                <b>1074 руб.</b>
+              </li>
+            </ul>
+
+            <button>Оформить заказ</button>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
       <header className="d-flex justify-between align-center p-40">
         <div className="d-flex align-center">
           <img width={40} height={40} src="/img/logo.svg" alt='logo' />
