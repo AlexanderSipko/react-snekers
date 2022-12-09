@@ -48,7 +48,7 @@ function App() {
               <b>11 299 руб.</b>
             </div>
             <button className="button">
-              <img src="/img/Plus--card.svg" alt='plus--card' />
+              <img src="/img/Card/Plus--card.svg" alt='plus--card' />
             </button>
           </div>
         </div>
@@ -66,7 +66,7 @@ function App() {
               <b>12 999 руб.</b>
             </div>
             <button className="button">
-              <img width={32} height={32} src="/img/Card/Plus.svg" alt='Plus' />
+              <img src="/img/Card/Plus--card.svg" alt='plus--card' />
             </button>
           </div>
         </div>
@@ -97,7 +97,7 @@ function App() {
               <b>10 799 руб.</b>
             </div>
             <button className="button">
-              <img width={11} height={11} src="/img/Plus--card.svg" alt='plus--card' />
+              <img src="/img/Card/Plus--card.svg" alt='plus--card' />
             </button>
           </div>
         </div>

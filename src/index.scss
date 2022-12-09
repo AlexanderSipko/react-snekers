@@ -50,9 +50,10 @@ header {
   border-radius: 40px;
   margin-right: 30px;
   transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+  // cursor: pointer;
   
   &:hover {
-    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
     transform: translateY(-5px);
   }
 
