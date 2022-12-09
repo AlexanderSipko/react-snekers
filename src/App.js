@@ -29,9 +29,16 @@ function App() {
         <h1>Все кроссовки</h1>
         <div className="content--card">
           <img width={133} height={112} src="/img/Sneakers/image 5-1.svg" alt='heart' />
-          <h3>Мужские Кроссовки Nike Blazer Mid Suede</h3>
-          <p>Цена:</p>
-          <p>12 999 руб.</p>
+          <p>Мужские Кроссовки Nike Blazer Mid Suede</p>
+          <div className="d-flex justify-between">
+            <div className="d-flex flex-column">
+              <span>Цена:</span>
+              <b>12 999 руб.</b>
+            </div>
+            <button className="button">
+              <img width={11} height={11} src="/img/Plus--card.svg" alt='plus--card' />
+            </button>
+          </div>
         </div>
       </div>
     </div>

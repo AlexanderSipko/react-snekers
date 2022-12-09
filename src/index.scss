@@ -34,3 +34,23 @@ header {
     margin: 0;
   }
 }
+
+
+.content--card {
+  width: 210px;
+  height: 260px;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  border-radius: 40px;
+}
+
+
+.button {
+  width: 32px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid #F2F2F2;
+  border-radius: 8px;
+  cursor: pointer;
+}
