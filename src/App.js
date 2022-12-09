@@ -27,6 +27,24 @@ function App() {
       </header>
       <div className="content p-40">
         <h1 className="mb-40">Все кроссовки</h1>
+
+      <div className="snekers d-flex">
+        {/* карточка товара */}
+        <div className="content--card">
+          <img width={133} height={112} src="/img/Sneakers/image 5-2.svg" alt='heart' />
+          <h5>Мужские Кроссовки Nike Kyrie 7</h5>
+          <div className="d-flex justify-between align-center">
+            <div className="d-flex flex-column">
+              <span>Цена:</span>
+              <b>11 299 руб.</b>
+            </div>
+            <button className="button">
+              <img width={11} height={11} src="/img/Plus--card.svg" alt='plus--card' />
+            </button>
+          </div>
+        </div>
+
+        {/* карточка товара */}
         <div className="content--card">
           <img width={133} height={112} src="/img/Sneakers/image 5-1.svg" alt='heart' />
           <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
@@ -40,6 +58,39 @@ function App() {
             </button>
           </div>
         </div>
+
+        {/* карточка товара */}
+        <div className="content--card">
+          <img width={133} height={112} src="/img/Sneakers/image 5-3.svg" alt='heart' />
+          <h5>Мужские Кроссовки Nike Kyrie Flytrap IV</h5>
+          <div className="d-flex justify-between align-center">
+            <div className="d-flex flex-column">
+              <span>Цена:</span>
+              <b>11 299 руб.</b>
+            </div>
+            <button className="button">
+              <img width={11} height={11} src="/img/Plus--card.svg" alt='plus--card' />
+            </button>
+          </div>
+        </div>
+
+        {/* карточка товара */}
+        <div className="content--card">
+          <img width={133} height={112} src="/img/Sneakers/image 5-4.svg" alt='heart' />
+          <h5>Мужские Кроссовки Jordan Air Jordan 11</h5>
+          <div className="d-flex justify-between align-center">
+            <div className="d-flex flex-column">
+              <span>Цена:</span>
+              <b>10 799 руб.</b>
+            </div>
+            <button className="button">
+              <img width={11} height={11} src="/img/Plus--card.svg" alt='plus--card' />
+            </button>
+          </div>
+        </div>
+
+        </div>
+      
       </div>
     </div>
   );
