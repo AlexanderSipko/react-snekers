@@ -37,12 +37,17 @@ header {
 
 
 .content--card {
-  width: 210px;
-  height: 260px;
+  width: 220px;
+  // height: 260px;
   padding: 20px;
   background: #FFFFFF;
   border: 1px solid #F3F3F3;
   border-radius: 40px;
+
+  h5 {
+    font-weight: 400;
+    font-size: 14px;
+  }
 }
 
 
