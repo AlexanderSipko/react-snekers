@@ -11,7 +11,7 @@ function App() {
           <img width={40} height={40} src="/img/logo.svg" alt='logo' />
           <div>
             <h3 className="text-uppercase">React snekers</h3>
-            <p>Магазин лучших кросовок</p>
+            <p className="opacity-5">Магазин лучших кросовок</p>
           </div>
         </div>
         <ul className="d-flex">
