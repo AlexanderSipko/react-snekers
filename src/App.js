@@ -15,7 +15,7 @@ function App() {
           </div>
         </div>
         <ul className="d-flex">
-          <li className="mr-30">
+          <li className="mr-10">
           <img width={18} height={18} src="/img/heart.svg" alt='heart' />
             <span>1205 руб.</span>
           </li>
