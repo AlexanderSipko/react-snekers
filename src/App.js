@@ -37,6 +37,9 @@ function App() {
       <div className="snekers d-flex">
         {/* карточка товара */}
         <div className="content--card">
+          <div className="favorite">
+            <img width={40} height={40} src="/img/Card/UnHeart.svg" alt='UnHeart' />
+          </div>
           <img width={133} height={112} src="/img/Sneakers/image 5-2.svg" alt='heart' />
           <h5>Мужские Кроссовки Nike Kyrie 7</h5>
           <div className="d-flex justify-between align-center">
@@ -45,13 +48,16 @@ function App() {
               <b>11 299 руб.</b>
             </div>
             <button className="button">
-              <img width={11} height={11} src="/img/Plus--card.svg" alt='plus--card' />
+              <img src="/img/Plus--card.svg" alt='plus--card' />
             </button>
           </div>
         </div>
 
         {/* карточка товара */}
         <div className="content--card">
+          <div className="favorite">
+            <img src="/img/Card/Heart.svg" alt='Heart' />
+          </div>
           <img width={133} height={112} src="/img/Sneakers/image 5-1.svg" alt='heart' />
           <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
           <div className="d-flex justify-between align-center">
@@ -60,7 +66,7 @@ function App() {
               <b>12 999 руб.</b>
             </div>
             <button className="button">
-              <img width={11} height={11} src="/img/Plus--card.svg" alt='plus--card' />
+              <img width={32} height={32} src="/img/Card/Plus.svg" alt='Plus' />
             </button>
           </div>
         </div>
@@ -74,9 +80,10 @@ function App() {
               <span>Цена:</span>
               <b>11 299 руб.</b>
             </div>
-            <button className="button">
+            {/* <button className="button">
               <img width={11} height={11} src="/img/Plus--card.svg" alt='plus--card' />
-            </button>
+            </button> */}
+            <img width={32} height={32} src="/img/Card/Check.svg" alt='Check' />
           </div>
         </div>
 
