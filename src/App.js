@@ -16,10 +16,11 @@ function App() {
         </div>
         <ul className="d-flex">
           <li className="mr-10">
-          <img width={18} height={18} src="/img/heart.svg" alt='heart' />
+          <img width={18} height={18} src="/img/card.svg" alt='card' />
             <span>1205 руб.</span>
           </li>
           <li>
+          <img width={18} height={18} src="/img/heart.svg" alt='heart' />
           <img width={18} height={18} src="/img/user.svg" alt='user' />
           </li>
         </ul>
