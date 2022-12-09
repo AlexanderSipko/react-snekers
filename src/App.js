@@ -26,7 +26,13 @@ function App() {
         </ul>
       </header>
       <div className="content p-40">
-        <h1 className="mb-40">Все кроссовки</h1>
+        <div className="d-flex justify-between align-center mb-40">
+          <h1>Все кроссовки</h1>
+          <div className="search--blcok d-flex align-center">
+            <img width={18} height={18} src="/img/search.svg" alt='search' />
+            <input placeholder="Поиск..."></input>
+          </div>
+        </div>
 
       <div className="snekers d-flex">
         {/* карточка товара */}
