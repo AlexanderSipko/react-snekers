@@ -12,13 +12,15 @@ function Card(props) {
             return (<img width={32} height={32} src="/img/Card/Check.svg" alt='Check' />)
         }
     }
+    let img="/img/Card/UnHeart.svg"
+
     return (
         <div className="content--card mb-40">
             <div className="favorite">
-                <img width={40} height={40} src={props.img} alt='UnHeart' />
+                <img width={40} height={40} src={img} alt='UnHeart' />
             </div>
-            <img width={133} height={112} src={props.img2} alt='heart' />
-            <h5>{props.titel}</h5>
+            <img width={133} height={112} src={props.imgeUrl} alt='heart' />
+            <h5>{props.name}</h5>
             <div className="d-flex justify-between align-center">
                 <div className="d-flex flex-column">
                     <span>Цена:</span>

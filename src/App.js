@@ -3,7 +3,26 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 
+
+const arr = [
+  { name: 'Мужские Кроссовки Nike Kyrie 7', price: 11299, imgeUrl:"/img/Sneakers/image 5-2.svg"},
+  { name: 'Мужские Кроссовки Nike Kyrie Flytrap IV', price: 11299, imgeUrl:"/img/Sneakers/image 5-1.svg"}
+]
+
+
 function App() {
+
+  function CreateCard() {
+    // создание списка компонентов с помощью массива
+    return arr.map((obj) =>
+      <Card
+        name=  { obj.name }
+        imgeUrl=  { obj.imgeUrl }
+        price='11 299'
+        type='false'
+      />
+    )
+  }
 
   return (
     <div className="wrapper clear">
@@ -18,8 +37,10 @@ function App() {
           </div>
         </div>
 
-      <div className="snekers d-flex">
-        <Card 
+        <div className="snekers d-flex">
+
+          {CreateCard()}
+          {/* <Card 
           titel='Мужские Кроссовки Nike Kyrie 7'
           img="/img/Card/UnHeart.svg"
           img2="/img/Sneakers/image 5-2.svg"
@@ -49,9 +70,9 @@ function App() {
           img2="/img/Sneakers/image 5-4.svg"
           price='10 799'
           type='false'
-        />
-      </div>
-      
+        /> */}
+        </div>
+
       </div>
     </div>
   );
