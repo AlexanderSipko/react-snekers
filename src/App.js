@@ -23,7 +23,6 @@ function App() {
         price={obj.price}
         imgeUrl={obj.imgeUrl}
         onFavorite = {() => console.log(obj.id + ' favorite')}
-        onPlus={() => console.log(obj.id)}
       />
     )
   }
