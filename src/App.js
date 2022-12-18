@@ -3,10 +3,11 @@ import React from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
-
+ 
 function App() {
 
   const [items, setItems] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState([]);
   const [cardOpened, setCardOpened] = React.useState(false);
 
   const onOpenCard = () => {
@@ -17,17 +18,23 @@ function App() {
       fetch('https://639f645c5eb8889197fbd54a.mockapi.io/items').then( res => {
       return res.json()
     }).then( json => { setItems(json) })
-  }, []) 
+  }, [])
+
+  const onAddToCard = (obj) => {
+
+    setCartItems( prev => [...prev, obj] )
+  }
 
   function CreateCard() {
     // создание списка компонентов с помощью массива
-    return (items.map((obj) =>
+    return (items.map((item) =>
       <Card
-        key={obj.id}
-        titel={obj.name}
-        price={obj.price}
-        imgeUrl={obj.imgeUrl}
-        onFavorite = {() => console.log(obj.id + ' favorite')}
+        key={item.id}
+        titel={item.name}
+        price={item.price}
+        imgeUrl={item.imgeUrl}
+        onFavorite = {() => console.log(item.id + ' favorite')}
+        onPlus = { (obj) => { onAddToCard(obj) } }
       />
     )
     )
@@ -35,7 +42,7 @@ function App() {
 
   return (
     <div className="wrapper clear">
-      {cardOpened && <Drawer onClose={ onOpenCard } /> }
+      {cardOpened && <Drawer items={ cartItems }  onClose={ onOpenCard } /> }
       <Header onClickCard={ onOpenCard } />
       <div className="content p-40">
         <div className="d-flex justify-between align-center mb-40">
