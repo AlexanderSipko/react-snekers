@@ -5,10 +5,12 @@ import Drawer from "./components/Drawer";
 
 
 const arr = [
-  { name: 'Мужские Кроссовки Nike Kyrie 7', price: 11299, imgeUrl:"/img/Sneakers/image 5-2.svg"},
-  { name: 'Мужские Кроссовки Nike Kyrie Flytrap IV', price: 11299, imgeUrl:"/img/Sneakers/image 5-1.svg"}
-]
+  { id:1, name: 'Мужские Кроссовки Nike Kyrie 7', price: 11299, imgeUrl:"/img/Sneakers/image 5-2.svg"},
+  { id:2, name: 'Мужские Кроссовки Nike Kyrie Flytrap IV', price: 11299, imgeUrl:"/img/Sneakers/image 5-1.svg"},
+  { id:3, name: 'Кроссовки Puma X Aka Boku Future Rider', price: 8999, imgeUrl:"/img/Sneakers/image 5-9.svg"},
+  { id:4, name: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 8499, imgeUrl:"/img/Sneakers/image 5-7.svg"}
 
+]
 
 function App() {
 
@@ -16,13 +18,16 @@ function App() {
     // создание списка компонентов с помощью массива
     return arr.map((obj) =>
       <Card
-        name=  { obj.name }
-        imgeUrl=  { obj.imgeUrl }
-        price='11 299'
-        type='false'
+        key={obj.id}
+        titel={obj.name}
+        price={obj.price}
+        imgeUrl={obj.imgeUrl}
+        onFavorite = {() => console.log(obj.id + ' favorite')}
+        onPlus={() => console.log(obj.id)}
       />
     )
   }
+  
 
   return (
     <div className="wrapper clear">
