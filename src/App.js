@@ -1,4 +1,5 @@
 
+import React from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
@@ -27,11 +28,12 @@ function App() {
     )
   }
   
+  const [cardOpened, setCardOpened] = React.useState(false);
 
   return (
     <div className="wrapper clear">
-      <Drawer />
-      <Header />
+      {cardOpened ? <Drawer onClickCard={ () => { setCardOpened(!cardOpened)}} />: null }
+      <Header onClickCard={ () => { setCardOpened(!cardOpened)}} />
       <div className="content p-40">
         <div className="d-flex justify-between align-center mb-40">
           <h1>Все кроссовки</h1>

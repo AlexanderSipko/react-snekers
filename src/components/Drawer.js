@@ -3,18 +3,15 @@
 function Drawer(props) {
 
     return (
-        <div style={{ display: 'none' }} className="overLay">
-            {/* <div  className="overLay"> */}
+        // <div style={{ display: 'none' }} className="overLay">
+            <div  className="overLay">
             <div className="drawer">
                 <h2 className="mb-30 d-flex justify-between align-center">
                     Корзина
-                    <img className="remove--btn cu-p" src="/img/Card/btn-remove.jpg" alt='btn--remove' />
+                    <img onClick={props.onClickCard} className="remove--btn cu-p" src="/img/Card/btn-remove.jpg" alt='btn--remove' />
                 </h2>
-
                 <div className="items">
-
                     <div className="cartItem d-flex align-center mb-20">
-
                         <div style={{ backgroundImage: 'url("/img/Sneakers/image 5-2.svg")' }} className="cartItemImg"></div>
                         <div className="mr-20">
                             <p className="mb-5">Мужские Кроссовки Nike Kyrie 7</p>
