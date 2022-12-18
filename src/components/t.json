@@ -1,0 +1,14 @@
+[
+    { "id":1, "name": "Мужские Кроссовки Nike Kyrie 7", "price": 11299, "imgeUrl":"/img/Sneakers/image 5-1.svg"},
+    { "id":2, "name": "Мужские Кроссовки Nike Kyrie Flytrap IV", "price": 11299, "imgeUrl":"/img/Sneakers/image 5-2.svg"},
+    { "id":3, "name": "Кроссовки Puma X Aka Boku Future Rider", "price": 8999, "imgeUrl":"/img/Sneakers/image 5-3.svg"},
+    { "id":4, "name": "Мужские Кроссовки Nike Blazer Mid Suede", "price": 8499, "imgeUrl":"/img/Sneakers/image 5-4.svg"},
+    { "id":5, "name": "Мужские Кроссовки Nike Kyrie 7", "price": 11299, "imgeUrl":"/img/Sneakers/image 5-5.svg"},
+    { "id":6, "name": "Мужские Кроссовки Nike Kyrie Flytrap IV", "price": 11299, "imgeUrl":"/img/Sneakers/image 5-6.svg"},
+    { "id":7, "name": "Кроссовки Puma X Aka Boku Future Rider", "price": 8999, "imgeUrl":"/img/Sneakers/image 5-7.svg"},
+    { "id":8, "name": "Мужские Кроссовки Nike Blazer Mid Suede", "price": 8499, "imgeUrl":"/img/Sneakers/image 5-8.svg"},
+    { "id":9, "name": "Мужские Кроссовки Nike Kyrie Flytrap IV", "price": 11299, "imgeUrl":"/img/Sneakers/image 5-9.svg"},
+    { "id":10, "name": "Кроссовки Puma X Aka Boku Future Rider", "price": 8999, "imgeUrl":"/img/Sneakers/image 5-10.svg"},
+    { "id":11, "name": "Мужские Кроссовки Nike Blazer Mid Suede", "price": 8499, "imgeUrl":"/img/Sneakers/image 5-11.svg"},
+    { "id":12, "name": "Мужские Кроссовки Nike Blazer Mid Suede", "price": 8499, "imgeUrl":"/img/Sneakers/image 5.svg"}
+]

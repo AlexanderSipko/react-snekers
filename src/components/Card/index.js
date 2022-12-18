@@ -5,17 +5,12 @@ import styles from './Card.module.scss'
 
 function Card(props) {
     let img="/img/Card/UnHeart.svg"
-
     const PlusBtn = "/img/Card/PlusBtn.png"
     const CheckBtn = "/img/Card/CheckBtn.svg"
-
     const [isAdded, setIsAdded] = React.useState(false)
-
     const onClickPlus = () => {
         setIsAdded(!isAdded)
     }
-
-    console.log(isAdded)
     return (
         <div className={styles.card}>
             <div className={styles.favorite} onClick={props.onFavorite}>
