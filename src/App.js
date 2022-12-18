@@ -30,10 +30,14 @@ function App() {
   
   const [cardOpened, setCardOpened] = React.useState(false);
 
+  const onOpenCard = () => {
+    setCardOpened(!cardOpened)
+  }
+
   return (
     <div className="wrapper clear">
-      {cardOpened ? <Drawer onClickCard={ () => { setCardOpened(!cardOpened)}} />: null }
-      <Header onClickCard={ () => { setCardOpened(!cardOpened)}} />
+      {cardOpened ? <Drawer onClickCard={ onOpenCard } />: null }
+      <Header onClickCard={ onOpenCard } />
       <div className="content p-40">
         <div className="d-flex justify-between align-center mb-40">
           <h1>Все кроссовки</h1>
