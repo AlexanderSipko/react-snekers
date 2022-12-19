@@ -1,5 +1,6 @@
 
 import React from "react";
+import axios from "axios";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
@@ -16,9 +17,10 @@ function App() {
   }
 
   React.useEffect( () => {
-      fetch('https://639f645c5eb8889197fbd54a.mockapi.io/items').then( res => {
-      return res.json()
-    }).then( json => { setItems(json) })
+    //   fetch('https://639f645c5eb8889197fbd54a.mockapi.io/items').then( res => {
+    //   return res.json()
+    // }).then( json => { setItems(json) })
+    axios.get('https://639f645c5eb8889197fbd54a.mockapi.io/items').then( (res) => setItems(res.data) )
   }, [])
 
   const onAddToCard = (obj) => {
