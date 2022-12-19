@@ -28,27 +28,22 @@ function App() {
 
   function CreateCard() {
     // создание списка компонентов с помощью массива
-    return (items.map((item) =>
-      
-      <Card
-        key={item.id}
-        titel={item.name}
-        price={item.price}
-        imgeUrl={item.imgeUrl}
-        onFavorite = {() => console.log(item.id + ' favorite')}
-        onPlus = { (obj) => { onAddToCard(obj) } }
-      />
-    )
+    return (items.filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase())).map((item) =>
+        <Card
+          key={item.id}
+          titel={item.name}
+          price={item.price}
+          imgeUrl={item.imgeUrl}
+          onFavorite = {() => console.log(item.id + ' favorite')}
+          onPlus = { (obj) => { onAddToCard(obj) } }
+        />
+      )
     )
   };
  
   const onChangeSearchInput = (event) => {
     setSearchValue( event.target.value )
   }
-
-  React.useEffect( () => {
-    console.log( 'reduse_list' )
-}, [searchValue])
 
   return (
     <div className="wrapper clear">
