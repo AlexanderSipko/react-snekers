@@ -10,7 +10,7 @@ function Card(props) {
     const [isAdded, setIsAdded] = React.useState(false)
 
     const onClickPlus = () => {
-        props.onPlus({ titel:props.titel, imgeUrl:props.imgeUrl, price:props.price });
+        props.onPlus({ id:props.id, titel:props.titel, imgeUrl:props.imgeUrl, price:props.price });
         setIsAdded(!isAdded)
     }
 

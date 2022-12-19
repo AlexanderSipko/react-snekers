@@ -18,7 +18,7 @@ function Drawer(props) {
                                 <p className="mb-5">{ obj.titel }</p>
                                 <b>{obj.price} руб. </b>
                             </div>
-                            <img className="remove--btn" src="/img/Card/btn-remove.jpg" alt='btn--remove' />
+                            <img onClick={ () => props.onRemove(obj.id) } className="remove--btn" src="/img/Card/btn-remove.jpg" alt='btn--remove' />
                         </div>
                     )
                 })}

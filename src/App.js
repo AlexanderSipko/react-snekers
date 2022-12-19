@@ -21,23 +21,31 @@ function App() {
     //   return res.json()
     // }).then( json => { setItems(json) })
     axios.get('https://639f645c5eb8889197fbd54a.mockapi.io/items').then( (res) => setItems(res.data) )
+    axios.get('https://639f645c5eb8889197fbd54a.mockapi.io/cart').then( (res) => setCartItems(res.data) )
   }, [])
 
   const onAddToCard = (obj) => {
-
+    axios.post('https://639f645c5eb8889197fbd54a.mockapi.io/cart', obj)
     setCartItems( prev => [...prev, obj] )
+  }
+
+  const onRemoveItem = (id) => {
+
+    axios.delete(`https://639f645c5eb8889197fbd54a.mockapi.io/cart/${id}`)
+    setCartItems( (prev) => prev.filter( item => item.id !== id) )
   }
 
   function CreateCard() {
     // создание списка компонентов с помощью массива
     return (items.filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase())).map((item) =>
         <Card
-          key={item.id}
+          key={item.imgeUrl}
+          id={item.id}
           titel={item.name}
           price={item.price}
           imgeUrl={item.imgeUrl}
           onFavorite = {() => console.log(item.id + ' favorite')}
-          onPlus = { (obj) => { onAddToCard(obj) } }
+          onPlus = { onAddToCard }
         />
       )
     )
@@ -49,7 +57,7 @@ function App() {
 
   return (
     <div className="wrapper clear">
-      {cardOpened && <Drawer items={ cartItems }  onClose={ onOpenCard } /> }
+      {cardOpened && <Drawer items={ cartItems }  onClose={ onOpenCard } onRemove={onRemoveItem} /> }
       <Header onClickCard={ onOpenCard } />
       <div className="content p-40">
         <div className="d-flex justify-between align-center mb-40">
