@@ -10,6 +10,7 @@ function Drawer(props) {
                 <h2 className="mb-30 d-flex justify-between align-center">
                     Корзина
                 </h2>
+                <div className="drawer--empty">
                 <div className="cartEmty d-flex justify-between align-center flex-column flex">
                         <img className="mb-20" src="/img/Card/empty--card.png"  alt='Clear' />
                     <h2>Корзина пустая</h2>
@@ -18,6 +19,8 @@ function Drawer(props) {
                         <img className="gb--btn--1" src="/img/Card/left_stire.svg" alt='string' />Вернуться назад
                     </button>
                 </div> 
+                </div>
+                
             </div>
             :
             <div className="drawer">
