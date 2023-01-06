@@ -66,12 +66,14 @@ function App() {
   return (
     <div className="wrapper clear">
       {cardOpened && <Drawer items={ cartItems }  onClose={ onOpenCard } onRemove={onRemoveItem} /> }
+      
       <Header onClickCard={ onOpenCard } />
 
       <Routes>
+        {/* <Route path="/" exact  element={<Header onClickCard={ onOpenCard } />}></Route> */}
         <Route path='/favorites' element={
-          <Link to='/'>
-            hi i'm link router and i can turn the back
+          <Link to='/' >
+            hi i'm link router and i can turn the back :)
           </Link>
           }></Route>
       </Routes>
