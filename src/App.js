@@ -1,6 +1,7 @@
 
 import React from "react";
 import axios from "axios";
+import { Route, Routes } from 'react-router-dom';
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
@@ -38,6 +39,7 @@ function App() {
   const onAddToFavorites = (obj) => {
     axios.post('https://639f645c5eb8889197fbd54a.mockapi.io/favorites', obj)
     setCartFavorits( prev => [...prev, obj] )
+    console.log(cartFavorits)
   }
 
   function CreateCard() {
@@ -65,6 +67,11 @@ function App() {
     <div className="wrapper clear">
       {cardOpened && <Drawer items={ cartItems }  onClose={ onOpenCard } onRemove={onRemoveItem} /> }
       <Header onClickCard={ onOpenCard } />
+
+      <Routes>
+        <Route path='/test' element='test route'></Route>
+      </Routes>
+
       <div className="content p-40">
         <div className="d-flex justify-between align-center mb-40">
         <h1>{ searchValue ? `Поиск по запросу: "${ searchValue }"` : 'Все кроссовки' } </h1>
