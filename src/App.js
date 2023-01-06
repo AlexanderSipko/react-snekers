@@ -1,7 +1,7 @@
 
 import React from "react";
 import axios from "axios";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
@@ -69,7 +69,11 @@ function App() {
       <Header onClickCard={ onOpenCard } />
 
       <Routes>
-        <Route path='/test' element='test route'></Route>
+        <Route path='/favorites' element={
+          <Link to='/'>
+            hi i'm link router and i can turn the back
+          </Link>
+          }></Route>
       </Routes>
 
       <div className="content p-40">
