@@ -5,6 +5,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
+import Home from './pages/Home'
  
 function App() {
 
@@ -42,22 +43,22 @@ function App() {
     console.log(cartFavorits)
   }
 
-  function CreateCard() {
-    // создание списка компонентов с помощью массива
-    return (items.filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase())).map((item) =>
-        <Card
-          key={item.imgeUrl}
-          id={item.id}
-          titel={item.name}
-          price={item.price}
-          imgeUrl={item.imgeUrl}
+  // function CreateCard() {
+  //   // создание списка компонентов с помощью массива
+  //   return (items.filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase())).map((item) =>
+  //       <Card
+  //         key={item.imgeUrl}
+  //         id={item.id}
+  //         titel={item.name}
+  //         price={item.price}
+  //         imgeUrl={item.imgeUrl}
           
-          addFavorites = { onAddToFavorites }
-          onPlus = { onAddToCard }
-        />
-      )
-    )
-  };
+  //         addFavorites = { onAddToFavorites }
+  //         onPlus = { onAddToCard }
+  //       />
+  //     )
+  //   )
+  // };
  
   const onChangeSearchInput = (event) => {
     setSearchValue( event.target.value )
@@ -76,32 +77,18 @@ function App() {
             hi i'm link router and i can turn the back :)
           </Link>
           }></Route>
+        <Route path="/" element={
+          <Home
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+            onChangeSearchInput={onChangeSearchInput}
+            items={items}
+            onAddToFavorites={onAddToFavorites}
+            onAddToCard={onAddToCard}
+          />
+          }>
+        </Route>
       </Routes>
-
-      <div className="content p-40">
-        <div className="d-flex justify-between align-center mb-40">
-        <h1>{ searchValue ? `Поиск по запросу: "${ searchValue }"` : 'Все кроссовки' } </h1>
-          
-          <div className="search--blcok d-flex align-center">
-            <img width={18} height={18} src="/img/search.svg" alt='search' />
-
-            { searchValue && (
-              <img 
-                onClick={ () => setSearchValue('') }
-                className="clear cu-p"
-                src="/img/Card/btn-remove.jpg"
-                alt='Clear'
-              />
-            )}
-            <input onChange={ onChangeSearchInput } value={ searchValue } placeholder="Поиск..."></input>
-          </div>
-        </div>
-        <div className="snekers d-flex">
-
-          { CreateCard() }
-        
-        </div>
-      </div>
     </div>
   );
 }
