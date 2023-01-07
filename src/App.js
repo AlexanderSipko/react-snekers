@@ -89,6 +89,7 @@ function App() {
             items={items}
             onAddToFavorites={onAddToFavorites}
             onAddToCard={onAddToCard}
+            favorite={false}
           />
         }></Route>
         <Route exact path='/favorites' element={
@@ -96,6 +97,7 @@ function App() {
             items={cartFavorits}
             onAddToFavorites={onAddToFavorites}
             onAddToCard={onAddToCard}
+            favorite={true}
           />
         }></Route>
       </Routes>

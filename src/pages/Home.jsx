@@ -7,7 +7,8 @@ function Home({
             onChangeSearchInput,
             items,
             onAddToFavorites,
-            onAddToCard
+            onAddToCard,
+            favorite
             }) {
     
     function CreateCard(items) {
@@ -21,6 +22,7 @@ function Home({
                 imgeUrl={item.imgeUrl}
                 addFavorites = { onAddToFavorites }
                 onPlus = { onAddToCard }
+                favorite={favorite}
             />
             )
         )};

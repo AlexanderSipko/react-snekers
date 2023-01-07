@@ -9,7 +9,7 @@ function Card(props) {
     const PlusBtn = "/img/Card/PlusBtn.png"
     const CheckBtn = "/img/Card/CheckBtn.svg"
     const [isAdded, setIsAdded] = React.useState(false)
-    const [isFavorite, setIsFavorite] = React.useState(false)
+    const [isFavorite, setIsFavorite] = React.useState(props.favorite)
 
     const onClickPlus = () => {
         props.onPlus({ id:props.id, titel:props.titel, imgeUrl:props.imgeUrl, price:props.price });
@@ -26,6 +26,7 @@ function Card(props) {
         <div className={styles.card}>
             <div className={styles.favorite} onClick={props.onFavorite}>
                 <img
+                    className={!isFavorite ? styles.img: '--'}
                     onClick={ addToFavorites }
                     src={isFavorite ? Heart: UnHeart} alt='UnHeart'
                     width={40}
