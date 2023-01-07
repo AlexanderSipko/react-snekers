@@ -1,7 +1,7 @@
 
 import React from "react";
 import axios from "axios";
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 // import Card from "./components/Card";
 
 import Header from "./components/Header";
