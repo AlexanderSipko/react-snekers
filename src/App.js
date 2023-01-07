@@ -25,8 +25,16 @@ function App() {
     //   fetch('https://639f645c5eb8889197fbd54a.mockapi.io/items').then( res => {
     //   return res.json()
     // }).then( json => { setItems(json) })
-    axios.get('https://639f645c5eb8889197fbd54a.mockapi.io/items').then( (res) => setItems(res.data) )
-    axios.get('https://639f645c5eb8889197fbd54a.mockapi.io/cart').then( (res) => setCartItems(res.data) )
+    axios.get('https://639f645c5eb8889197fbd54a.mockapi.io/items').then( 
+      (res) => setItems(res.data) 
+    )
+    axios.get('https://639f645c5eb8889197fbd54a.mockapi.io/cart').then( 
+      (res) => setCartItems(res.data) 
+    )
+    axios.get('https://639f645c5eb8889197fbd54a.mockapi.io/favorites').then( 
+      (res) => setCartFavorits(res.data) 
+    )
+  
   }, [])
 
   const onAddToCard = (obj) => {
@@ -73,14 +81,7 @@ function App() {
       <Header onClickCard={ onOpenCard } />
 
       <Routes>
-        {/* <Route path="/" exact  element={<Header onClickCard={ onOpenCard } />}></Route> */}
-        <Route
-          path='/favorites'
-          element={<Favorites/>}>
-        </Route>
-        <Route
-          path="/"
-          element={
+        <Route exact path="/" element={
           <Home
             searchValue={searchValue}
             setSearchValue={setSearchValue}
@@ -89,8 +90,14 @@ function App() {
             onAddToFavorites={onAddToFavorites}
             onAddToCard={onAddToCard}
           />
-          }>
-        </Route>
+        }></Route>
+        <Route exact path='/favorites' element={
+          <Favorites
+            items={cartFavorits}
+            onAddToFavorites={onAddToFavorites}
+            onAddToCard={onAddToCard}
+          />
+        }></Route>
       </Routes>
     </div>
   );
