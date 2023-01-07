@@ -2,10 +2,12 @@
 import React from "react";
 import axios from "axios";
 import { Route, Routes, Link } from 'react-router-dom';
-import Card from "./components/Card";
+// import Card from "./components/Card";
+
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 import Home from './pages/Home'
+import Favorites from './pages/Favorites'
  
 function App() {
 
@@ -43,7 +45,7 @@ function App() {
     console.log(cartFavorits)
   }
 
-  // function CreateCard() {
+  // function CreateCard(items, onAddToFavorites, onAddToCard) {
   //   // создание списка компонентов с помощью массива
   //   return (items.filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase())).map((item) =>
   //       <Card
@@ -72,12 +74,13 @@ function App() {
 
       <Routes>
         {/* <Route path="/" exact  element={<Header onClickCard={ onOpenCard } />}></Route> */}
-        <Route path='/favorites' element={
-          <Link to='/' >
-            hi i'm link router and i can turn the back :)
-          </Link>
-          }></Route>
-        <Route path="/" element={
+        <Route
+          path='/favorites'
+          element={<Favorites/>}>
+        </Route>
+        <Route
+          path="/"
+          element={
           <Home
             searchValue={searchValue}
             setSearchValue={setSearchValue}

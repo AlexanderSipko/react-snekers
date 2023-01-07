@@ -10,7 +10,7 @@ function Home({
             onAddToCard
             }) {
     
-    function CreateCard() {
+    function CreateCard(items) {
         // создание списка компонентов с помощью массива
         return (items.filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase())).map((item) =>
             <Card
@@ -19,7 +19,6 @@ function Home({
                 titel={item.name}
                 price={item.price}
                 imgeUrl={item.imgeUrl}
-                
                 addFavorites = { onAddToFavorites }
                 onPlus = { onAddToCard }
             />
@@ -48,7 +47,7 @@ function Home({
             </div>
             <div className="snekers d-flex">
 
-                {CreateCard()}
+                {CreateCard(items)}
 
             </div>
         </div>
