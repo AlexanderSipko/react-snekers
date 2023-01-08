@@ -17,6 +17,8 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('');
   const [cardOpened, setCardOpened] = React.useState(false);
 
+  
+
   const onOpenCard = () => {
     setCardOpened(!cardOpened)
   }
@@ -37,6 +39,9 @@ function App() {
   
   }, [])
 
+
+  const [countItemsFavorites, setCountItemsFavorites] = React.useState(cartFavorits.length);
+
   const onAddToCard = (obj) => {
     axios.post('https://639f645c5eb8889197fbd54a.mockapi.io/cart', obj)
     setCartItems( prev => [...prev, obj] )
@@ -47,16 +52,24 @@ function App() {
     setCartItems( (prev) => prev.filter( item => item.id !== id) )
   }
 
-  const onAddToFavorites = (obj) => {
+  const onAddToFavorites = async (obj) => {
+    // TODO сделать два разных методоа для добавления в массив и для удаления
+    try {
+      if (cartFavorits.find( item => item.id === obj.id )) {
+        axios.delete(`https://639f645c5eb8889197fbd54a.mockapi.io/favorites/${obj.id}`)
+        // setCartFavorits( (prev) => prev.filter( item => item.id !== obj.id) )
+        // setCartFavorits( (prev) => [...prev]  )
+        setCountItemsFavorites( (prev) => prev - 1)
 
-    if (cartFavorits.find( item => item.id === obj.id )) {
-      axios.delete(`https://639f645c5eb8889197fbd54a.mockapi.io/favorites/${obj.id}`)
-      setCartFavorits( (prev) => prev.filter( item => item.id !== obj.id) )
-    } else {
-      axios.post('https://639f645c5eb8889197fbd54a.mockapi.io/favorites', obj)
-      setCartFavorits( prev => [...prev, obj] )
+      } else {
+        const { data } = await axios.post('https://639f645c5eb8889197fbd54a.mockapi.io/favorites', obj)
+        setCartFavorits( prev => [...prev, data] )
+        setCountItemsFavorites( (prev) => prev + 1)
+      }
+    } catch( error ) {
+      alert('Не удалось добавить в фавориты')
     }
-    console.log(cartFavorits)
+    
   }
 
   // function CreateCard(items, onAddToFavorites, onAddToCard) {
@@ -104,6 +117,7 @@ function App() {
             onAddToFavorites={onAddToFavorites}
             onAddToCard={onAddToCard}
             favorite={true}
+            countItemsFavorites={countItemsFavorites}
           />
         }></Route>
       </Routes>
