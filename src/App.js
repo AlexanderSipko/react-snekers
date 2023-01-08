@@ -48,8 +48,14 @@ function App() {
   }
 
   const onAddToFavorites = (obj) => {
-    axios.post('https://639f645c5eb8889197fbd54a.mockapi.io/favorites', obj)
-    setCartFavorits( prev => [...prev, obj] )
+
+    if (cartFavorits.find( item => item.id === obj.id )) {
+      axios.delete(`https://639f645c5eb8889197fbd54a.mockapi.io/favorites/${obj.id}`)
+      setCartFavorits( (prev) => prev.filter( item => item.id !== obj.id) )
+    } else {
+      axios.post('https://639f645c5eb8889197fbd54a.mockapi.io/favorites', obj)
+      setCartFavorits( prev => [...prev, obj] )
+    }
     console.log(cartFavorits)
   }
 

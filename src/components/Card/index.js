@@ -17,6 +17,7 @@ function Card(props) {
     }
 
     const addToFavorites = () => {
+        
         props.addFavorites({ id:props.id, titel:props.titel, imgeUrl:props.imgeUrl, price:props.price })
         setIsFavorite(!isFavorite);
     }

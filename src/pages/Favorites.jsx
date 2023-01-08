@@ -13,7 +13,7 @@ function Favorites({ items, onAddToFavorites, onAddToCard, favorite }) {
                 titel={item.name}
                 price={item.price}
                 imgeUrl={item.imgeUrl}
-                // addFavorites = { onAddToFavorites }
+                addFavorites = { onAddToFavorites }
                 // onPlus = { onAddToCard }
                 favorite={favorite}
             />
