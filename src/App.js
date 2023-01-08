@@ -17,7 +17,8 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('');
   const [cardOpened, setCardOpened] = React.useState(false);
 
-  
+  // добавлен хук для подсчета количества фаворитов
+  // const [countItemsFavorites, setCountItemsFavorites] = React.useState(0);
 
   const onOpenCard = () => {
     setCardOpened(!cardOpened)
@@ -34,13 +35,13 @@ function App() {
       (res) => setCartItems(res.data) 
     )
     axios.get('https://639f645c5eb8889197fbd54a.mockapi.io/favorites').then( 
-      (res) => setCartFavorits(res.data) 
+      (res) => {
+        setCartFavorits(res.data);
+        // setCountItemsFavorites(res.data.length)
+      }
     )
   
   }, [])
-
-
-  const [countItemsFavorites, setCountItemsFavorites] = React.useState(cartFavorits.length);
 
   const onAddToCard = (obj) => {
     axios.post('https://639f645c5eb8889197fbd54a.mockapi.io/cart', obj)
@@ -59,35 +60,18 @@ function App() {
         axios.delete(`https://639f645c5eb8889197fbd54a.mockapi.io/favorites/${obj.id}`)
         // setCartFavorits( (prev) => prev.filter( item => item.id !== obj.id) )
         // setCartFavorits( (prev) => [...prev]  )
-        setCountItemsFavorites( (prev) => prev - 1)
+        // setCountItemsFavorites( (prev) => prev - 1)
 
       } else {
         const { data } = await axios.post('https://639f645c5eb8889197fbd54a.mockapi.io/favorites', obj)
         setCartFavorits( prev => [...prev, data] )
-        setCountItemsFavorites( (prev) => prev + 1)
+        // setCountItemsFavorites( (prev) => prev + 1)
       }
     } catch( error ) {
       alert('Не удалось добавить в фавориты')
     }
     
   }
-
-  // function CreateCard(items, onAddToFavorites, onAddToCard) {
-  //   // создание списка компонентов с помощью массива
-  //   return (items.filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase())).map((item) =>
-  //       <Card
-  //         key={item.imgeUrl}
-  //         id={item.id}
-  //         titel={item.name}
-  //         price={item.price}
-  //         imgeUrl={item.imgeUrl}
-          
-  //         addFavorites = { onAddToFavorites }
-  //         onPlus = { onAddToCard }
-  //       />
-  //     )
-  //   )
-  // };
  
   const onChangeSearchInput = (event) => {
     setSearchValue( event.target.value )
@@ -117,7 +101,7 @@ function App() {
             onAddToFavorites={onAddToFavorites}
             onAddToCard={onAddToCard}
             favorite={true}
-            countItemsFavorites={countItemsFavorites}
+            // countItemsFavorites={countItemsFavorites}
           />
         }></Route>
       </Routes>

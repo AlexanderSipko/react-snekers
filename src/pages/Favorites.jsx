@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Card from "../components/Card/index";
 
 
-function Favorites({ items, onAddToFavorites, onAddToCard, favorite, countItemsFavorites }) {
+function Favorites({ items, onAddToFavorites, onAddToCard, favorite }) {
 
     function CreateCard(items) {
         // создание списка компонентов с помощью массива
@@ -23,7 +23,7 @@ function Favorites({ items, onAddToFavorites, onAddToCard, favorite, countItemsF
     return (
         <div className="content p-40">
             <div className="d-flex justify-between align-center mb-40">
-                <Link to='/'><h1>Мои закладки {countItemsFavorites}</h1></Link>
+                <Link to='/'><h1>Мои закладки</h1></Link>
             </div>
             <div className="snekers d-flex">
                 { CreateCard(items) }
